@@ -1,0 +1,9 @@
+{
+    "tasks": [
+        {
+            "label": "bootstrap",
+            "command": "${workspaceFolder}/bootstrap.sh",
+        }
+    ],
+    "version": "2.0.0"
+}
