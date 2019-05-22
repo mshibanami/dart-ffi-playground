@@ -31,7 +31,7 @@ class _HelloBindings {
         .asFunction();
 
     hello_get_user = library
-        .lookup<NativeFunction<hello_get_user_native_t>>("hello_parrot")
+        .lookup<NativeFunction<hello_get_user_native_t>>("hello_get_user")
         .asFunction();
   }
 }
