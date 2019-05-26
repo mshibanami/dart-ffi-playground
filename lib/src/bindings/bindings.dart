@@ -11,7 +11,7 @@ class _HelloBindings {
   int Function() hello_get_int_three;
   CString Function() hello_get_text_abc;
   CString Function(CString text, int length) hello_parrot;
-  HelloUserPointer Function() hello_get_user;
+  CHelloUser Function() hello_get_user;
 
   _HelloBindings() {
     library = dlopenPlatformSpecific("hello", path: "./lib/hello/build/");

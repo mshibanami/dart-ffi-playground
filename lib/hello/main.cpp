@@ -5,6 +5,6 @@ int main(int argc, char const* argv[]) {
     char* text = "aaa";
     char* aaa = hello_parrot(text, sizeof(aaa));
 
-    hello_user user = hello_get_user();
+    hello_user* user = hello_get_user();
     return 0;
 }

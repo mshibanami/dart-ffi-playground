@@ -16,7 +16,7 @@ char* hello_get_text_abc();
 
 char* hello_parrot(const char* text, size_t length);
 
-hello_user hello_get_user();
+hello_user* hello_get_user();
 
 #ifdef __cplusplus
 }

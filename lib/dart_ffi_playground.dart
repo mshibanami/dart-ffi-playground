@@ -34,7 +34,8 @@ class Hello {
 
   HelloUser getUser() {
     var userC = bindings.hello_get_user();
-    var user = userC.load<int>();
-    return null;
+    var user = HelloUser(userC.age);
+    userC.free();
+    return user;
   }
 }

@@ -19,8 +19,8 @@ char* hello_parrot(const char* text, size_t length) {
     return parrotted;
 }
 
-hello_user hello_get_user() {
-    hello_user user;
-    user.age = 30;
+hello_user* hello_get_user() {
+    hello_user* user = (hello_user*)malloc(sizeof(hello_user*));
+    user->age = 30;
     return user;
 }

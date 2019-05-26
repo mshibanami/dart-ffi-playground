@@ -8,4 +8,4 @@ typedef hello_get_text_abc_native_t = CString Function();
 
 typedef hello_parrot_native_t = CString Function(CString text, Int32 length);
 
-typedef hello_get_user_native_t = HelloUserPointer Function();
+typedef hello_get_user_native_t = CHelloUser Function();
