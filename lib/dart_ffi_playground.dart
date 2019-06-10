@@ -44,11 +44,13 @@ class HelloUser {
   String givenName;
   String middleName;
   String familyName;
+  CString Function() helloUserFunction;
 
   HelloUser(CHelloUser userC) {
     this.age = userC.age;
     this.givenName = CString.fromUtf8(userC.name.givenName);
     this.middleName = CString.fromUtf8(userC.name.middleName);
     this.familyName = CString.fromUtf8(userC.name.familyName);
+    this.helloUserFunction = userC.helloUserFunction.asFunction();
   }
 }

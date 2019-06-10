@@ -17,21 +17,21 @@ class _HelloBindings {
     library = dlopenPlatformSpecific("hello", path: "./lib/hello/build/");
 
     hello_get_int_three = library
-        .lookup<NativeFunction<hello_get_int_three_native_t>>(
+        .lookup<NativeFunction<HelloGetIntThreeOp>>(
             "hello_get_int_three")
         .asFunction();
 
     hello_get_text_abc = library
-        .lookup<NativeFunction<hello_get_text_abc_native_t>>(
+        .lookup<NativeFunction<HelloGetTextAbcOp>>(
             "hello_get_text_abc")
         .asFunction();
 
     hello_parrot = library
-        .lookup<NativeFunction<hello_parrot_native_t>>("hello_parrot")
+        .lookup<NativeFunction<HelloParrotOp>>("hello_parrot")
         .asFunction();
 
     hello_get_user = library
-        .lookup<NativeFunction<hello_get_user_native_t>>("hello_get_user")
+        .lookup<NativeFunction<HelloGetUserOp>>("hello_get_user")
         .asFunction();
   }
 }

@@ -15,6 +15,7 @@ typedef struct {
 struct hello_user {
     int age;
     hello_user_name* name;
+    char* (*hello_user_function)();
 };
 
 int hello_get_int_three();

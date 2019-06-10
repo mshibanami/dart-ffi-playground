@@ -1,4 +1,6 @@
 import 'dart:ffi' as ffi;
+import 'package:dart_ffi_playground/src/bindings/signatures.dart';
+
 import '../ffi/cstring.dart';
 
 // hello_user
@@ -9,6 +11,9 @@ class CHelloUser extends ffi.Pointer<ffi.Void> {
 
   @ffi.Pointer()
   CHelloUserName name;
+
+  @ffi.Pointer()
+  ffi.Pointer<ffi.NativeFunction<HelloUserFunctionOp>> helloUserFunction;
 }
 
 @ffi.struct

@@ -1,4 +1,5 @@
 import 'package:dart_ffi_playground/dart_ffi_playground.dart';
+import 'package:dart_ffi_playground/src/ffi/cstring.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -19,5 +20,9 @@ void main() {
     expect(user.givenName, "Manabu");
     expect(user.middleName, null);
     expect(user.familyName, "Nakazawa");
+
+    var functionNameC = user.helloUserFunction();
+    var string = CString.fromUtf8(functionNameC);
+    expect(string, "hello_user_function");
   });
 }
