@@ -20,7 +20,20 @@ char* hello_parrot(const char* text, size_t length) {
 }
 
 hello_user* hello_get_user() {
+    hello_user_name* name = (hello_user_name*)malloc(sizeof(hello_user_name*));
+
+    auto given = "Manabu";
+    auto family = "Nakazawa";
+
+    name->given_name = (char*)malloc(sizeof(char*) * strlen(given));
+    strcpy(name->given_name, given);
+    name->middle_name = nullptr;
+    name->family_name = (char*)malloc(sizeof(char*) * strlen(family));
+    strcpy(name->family_name, family);
+
     hello_user* user = (hello_user*)malloc(sizeof(hello_user*));
     user->age = 30;
+    user->name = name;
+
     return user;
 }

@@ -1,16 +1,24 @@
-import 'dart:ffi';
+import 'dart:ffi' as ffi;
+import '../ffi/cstring.dart';
 
 // hello_user
-@struct
-class CHelloUser extends Pointer<Void> {
-  @Int32()
+@ffi.struct
+class CHelloUser extends ffi.Pointer<ffi.Void> {
+  @ffi.Int32()
   int age;
+
+  @ffi.Pointer()
+  CHelloUserName name;
 }
 
-class HelloUser {
-  int age;
+@ffi.struct
+class CHelloUserName extends ffi.Pointer<ffi.Void> {
+  @ffi.Pointer()
+  CString givenName;
 
-  HelloUser(int age) {
-    this.age = age;
-  }
+  @ffi.Pointer()
+  CString middleName;
+
+  @ffi.Pointer()
+  CString familyName;
 }

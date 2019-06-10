@@ -6,8 +6,15 @@
 extern "C" {
 #endif
 
+typedef struct {
+    char* given_name;
+    char* middle_name;
+    char* family_name;
+} hello_user_name;
+
 struct hello_user {
     int age;
+    hello_user_name* name;
 };
 
 int hello_get_int_three();

@@ -16,5 +16,8 @@ void main() {
 
     var user = hello.getUser();
     expect(user.age, 30);
+    expect(user.givenName, "Manabu");
+    expect(user.middleName, null);
+    expect(user.familyName, "Nakazawa");
   });
 }

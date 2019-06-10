@@ -28,14 +28,27 @@ class Hello {
     var parrottedC = bindings.hello_parrot(textC, byteLength);
     var parrotted = CString.fromUtf8(parrottedC);
     textC.free();
-    parrottedC.free();
     return parrotted;
   }
 
   HelloUser getUser() {
     var userC = bindings.hello_get_user();
-    var user = HelloUser(userC.age);
-    userC.free();
+    userC.age;
+    var user = HelloUser(userC);
     return user;
+  }
+}
+
+class HelloUser {
+  int age;
+  String givenName;
+  String middleName;
+  String familyName;
+
+  HelloUser(CHelloUser userC) {
+    this.age = userC.age;
+    this.givenName = CString.fromUtf8(userC.name.givenName);
+    this.middleName = CString.fromUtf8(userC.name.middleName);
+    this.familyName = CString.fromUtf8(userC.name.familyName);
   }
 }
