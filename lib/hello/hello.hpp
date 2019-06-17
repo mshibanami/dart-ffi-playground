@@ -12,11 +12,17 @@ typedef struct {
     char* family_name;
 } hello_user_name;
 
-struct hello_user {
+typedef struct {
+    int month;
+    int day;
+} hello_birthday;
+
+typedef struct {
     int age;
     hello_user_name* name;
+    hello_birthday birthday;
     char* (*hello_user_function)();
-};
+} hello_user;
 
 int hello_get_int_three();
 

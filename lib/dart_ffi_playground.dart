@@ -44,6 +44,7 @@ class HelloUser {
   String givenName;
   String middleName;
   String familyName;
+  int birthdayMonth;
   CString Function() helloUserFunction;
 
   HelloUser(CHelloUser userC) {
@@ -51,6 +52,7 @@ class HelloUser {
     this.givenName = CString.fromUtf8(userC.name.givenName);
     this.middleName = CString.fromUtf8(userC.name.middleName);
     this.familyName = CString.fromUtf8(userC.name.familyName);
+    this.birthdayMonth = userC.birthday.month;
     this.helloUserFunction = userC.helloUserFunction.asFunction();
   }
 }

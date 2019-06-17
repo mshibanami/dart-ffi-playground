@@ -12,10 +12,14 @@ class CHelloUser extends ffi.Pointer<ffi.Void> {
   @ffi.Pointer()
   CHelloUserName name;
 
+  @ffi.Struct()
+  CHelloBirthday birthday;
+
   @ffi.Pointer()
   ffi.Pointer<ffi.NativeFunction<HelloUserFunctionOp>> helloUserFunction;
 }
 
+// hello_user_name
 @ffi.struct
 class CHelloUserName extends ffi.Pointer<ffi.Void> {
   @ffi.Pointer()
@@ -26,4 +30,14 @@ class CHelloUserName extends ffi.Pointer<ffi.Void> {
 
   @ffi.Pointer()
   CString familyName;
+}
+
+// hello_birthday
+@ffi.struct
+class CHelloBirthday extends ffi.Pointer<ffi.Void> {
+  @ffi.Int32()
+  int month;
+
+  @ffi.Int32()
+  int day;
 }

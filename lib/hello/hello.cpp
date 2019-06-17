@@ -32,15 +32,18 @@ hello_user* hello_get_user() {
     auto given = "Manabu";
     auto family = "Nakazawa";
 
+    hello_user* user = (hello_user*)malloc(sizeof(hello_user*));
+    user->age = 30;
+
     name->given_name = (char*)malloc(sizeof(char*) * strlen(given));
     strcpy(name->given_name, given);
     name->middle_name = nullptr;
     name->family_name = (char*)malloc(sizeof(char*) * strlen(family));
     strcpy(name->family_name, family);
-
-    hello_user* user = (hello_user*)malloc(sizeof(hello_user*));
-    user->age = 30;
     user->name = name;
+
+    user->birthday = {9, 16};
+
     user->hello_user_function = hello_user_function;
 
     return user;
